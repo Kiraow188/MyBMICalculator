@@ -37,11 +37,21 @@ public class MainActivity extends AppCompatActivity {
                 Double bmi = Math.round((Double.parseDouble(etWeight.getText().toString()) / Double.parseDouble(etHeight.getText().toString()) / Double.parseDouble(etHeight.getText().toString()))*1000.0)/1000.0;
                 String msg = Double.toString(bmi);
                 Calendar now = Calendar.getInstance();  //Create a Calendar object with current date and time
+                String text = "";
+                String time = "";
+                if (now.get(Calendar.HOUR_OF_DAY) > 12){
+                    text = "pm";
+                    time = Integer.toString(now.get(Calendar.HOUR_OF_DAY) - 12);
+                }
+                else{
+                    text = "am";
+                    time = Integer.toString(now.get(Calendar.HOUR_OF_DAY));
+                }
                 String datetime = now.get(Calendar.DAY_OF_MONTH) + "/" +
                         (now.get(Calendar.MONTH)+1) + "/" +
                         now.get(Calendar.YEAR) + " " +
-                        now.get(Calendar.HOUR_OF_DAY) + ":" +
-                        now.get(Calendar.MINUTE);
+                        time + ":" +
+                        now.get(Calendar.MINUTE) + text;
                 tvDate.append(datetime);
                 tvBMI.append(msg);
                 String output = "";
