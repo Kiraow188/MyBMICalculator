@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         btnCal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Double bmi = Math.round((Double.parseDouble(etWeight.getText().toString()) / Double.parseDouble(etHeight.getText().toString()) / Double.parseDouble(etHeight.getText().toString()))*100.0)/100.0;
+                Double bmi = Math.round((Double.parseDouble(etWeight.getText().toString()) / Double.parseDouble(etHeight.getText().toString()) / Double.parseDouble(etHeight.getText().toString()))*1000.0)/1000.0;
                 String msg = Double.toString(bmi);
                 Calendar now = Calendar.getInstance();  //Create a Calendar object with current date and time
                 String datetime = now.get(Calendar.DAY_OF_MONTH) + "/" +
